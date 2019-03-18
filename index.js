@@ -5,7 +5,6 @@ const server = express();
 server.use(express.json());
 
 // POST	/api/users
-
 server.post('/api/users', (req, res) => {
   const user = req.body;
 
@@ -30,7 +29,6 @@ server.post('/api/users', (req, res) => {
 
 
 // GET	/api/users
-
 server.get('/api/users', (req, res) => {
   db.find()
     .then(users => {
@@ -47,7 +45,6 @@ server.get('/api/users', (req, res) => {
 
 
 // GET	/api/users/:id
-
 server.get('/api/users/:id', (req, res) => {
   const { id } = req.params;
   db.findById(id)
@@ -71,8 +68,6 @@ server.get('/api/users/:id', (req, res) => {
 
 
 // DELETE	/api/users/:id
-
-
 server.delete('/api/users/:id', (req, res) => {
   const { id } = req.params;
   db.remove(id)
@@ -96,7 +91,6 @@ server.delete('/api/users/:id', (req, res) => {
 
 
 // PUT	/api/users/:id
-
 server.put('/api/users/:id', (req, res) => {
   const { id } = req.params;
   const user = req.body;
